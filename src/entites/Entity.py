@@ -10,10 +10,16 @@ class Entity:
     def tick(self):  # Abstract method
         pass
 
-    def render(self):  # Abstract method
+    def render(self, scene):  # Abstract method
         pass
 
 
 class Ball(Entity):
     def __init__(self):
-        super
+        super().__init__("ball.png", 32, 32)
+
+    def tick(self):
+        pass
+
+    def render(self, scene):
+        pass

@@ -1,31 +1,33 @@
 import pygame
 
+from src.world.World import World
+
 
 class Game:
     def __init__(self, width, height):
-        pygame.init()
-        self.screen = pygame.display.set_mode((width, height))
-
         self.width = width
         self.height = height
-        # Open window
 
-        while True:
-            self.screen.fill((255, 0, 0))
-            pygame.display.update()
+        pygame.init()
+        self.screen = pygame.display.set_mode((width, height))
+        self.world = World()
+        self.running = True
 
     def create_render_loop(self):
-        # Create loop that
+        while self.running:
+            self.screen.fill((0, 0, 0))
 
-        pass
+            self.tick()
+            self.render()
 
-    def render(self, scene):
-        # Draw the shapes
-        pass
+            pygame.display.update()
+
+    def render(self):
+        self.world.render(self.screen)
 
     def tick(self):
-        # Calculate the actions
-        pass
+        self.world.tick()
 
 
 game = Game(640, 320)
+game.create_render_loop()
