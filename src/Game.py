@@ -14,10 +14,15 @@ class Game:
         self.screen = pygame.display.set_mode((width, height))
         self.running = True
 
+        # Create keylistener
         self.keylistener = KeyListener()
+        self.keylistener.exit.append(self.quit_game)
 
         # Create world
-        self.world = World()
+        self.world = World(self.keylistener)
+
+    def quit_game(self):
+        self.running = False
 
     def create_render_loop(self):
         while self.running:
