@@ -31,11 +31,13 @@ class Ball(Entity):
         super().__init__("ball.png", 32, 32)
         self.border = Border(640, 320)
 
-        rect = self.image.get_rect() # self.image -> ball
+        rect = self.image.get_rect()  # self.image -> ball
         rect.x = self.border.width // 2
-        rect
+        rect.y = self.border.height // 2
+
     def tick(self):
-        pass
+        if rect.x > self.border.width or rect.x < 0:
+
 
     def render(self, scene):
         pass
