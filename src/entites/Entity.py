@@ -29,10 +29,11 @@ class Entity:
 class Ball(Entity):
     def __init__(self):
         super().__init__("ball.png", 32, 32)
-        self.border = [640, 320]
-        self.border.x
+        self.border = Border(640, 320)
+
         rect = self.image.get_rect() # self.image -> ball
-        rect.x =
+        rect.x = self.border.width // 2
+        rect
     def tick(self):
         pass
 
