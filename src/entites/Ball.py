@@ -3,17 +3,13 @@ from src.world.World import Border
 
 
 class Ball(Entity):
-    def __init__(self):
+    def __init__(self, width, height):
         super().__init__("ball.png", 32, 32)
-        self.border = Border(640, 320)
+        self.border = Border(width, height)
 
-        rect = self.image.get_rect()  # self.image -> ball
-        rect.x = self.border.width // 2
-        rect.y = self.border.height // 2
+        self.x = self.border.width / 2
+        self.y = self.border.height / 2
 
     def tick(self):
-        if rect.x > self.border.width or rect.x < 0:
-
-
-    def render(self, scene):
+        # if rect.x > self.border.width or rect.x < 0:
         pass

@@ -1,6 +1,7 @@
 import pygame
 import time
 
+from src.entites.Ball import Ball
 from src.events.KeyEvents import KeyListener
 from src.world.World import World
 
@@ -23,6 +24,7 @@ class Game:
 
         # Create world
         self.world = World(self.keylistener)
+        self.world.register_entity(Ball(width, height))
 
     def quit_game(self):
         self.running = False
@@ -50,7 +52,7 @@ class Game:
                 pygame.display.update()
 
             if timer >= 1000000000:
-                print(f"Ticks: {ticks}")
+                #print(f"Ticks: {ticks}")
                 ticks = 0
                 timer = 0
 
