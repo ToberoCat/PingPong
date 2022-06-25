@@ -1,8 +1,5 @@
 import pygame
 
-TILE_WIDTH = 32  # Pixels width per image
-TILE_HEIGHT = 32  # Pixels height per image
-
 
 class Game:
     def __init__(self, width, height):
@@ -13,9 +10,9 @@ class Game:
         self.height = height
         # Open window
 
-        self.screen.fill((32, 64, 64))
         while True:
-            pass
+            self.screen.fill((255, 0, 0))
+            pygame.display.update()
 
     def create_render_loop(self):
         # Create loop that
